@@ -1,4 +1,5 @@
 const gameService = require('./game.service')
+const logger = require('../../services/logger.service')
 
 async function getGame(req, res) {
     const game = await gameService.getById(req.params.id)
@@ -6,9 +7,14 @@ async function getGame(req, res) {
 }
   
 async function getGames(req, res) {
-    console.log(req.query);
-    const games = await gameService.query(req.query)
-    res.send(games)
+    try {
+        const games = await gameService.query(req.query)
+        res.send(games)
+    } catch (err) {
+        logger.error('Cannot get games', err);
+        res.status(500).send({ error: 'cannot get games' })
+        
+    }
 }
 
 async function deleteGame(req, res) {

@@ -14,7 +14,8 @@ async function query(filterBy = {}) {
     const criteria = _buildCriteria(filterBy)
     const collection = await dbService.getCollection('game')
     try {
-        const games = await collection.find(criteria).toArray();
+        let games = await collection.find(criteria).toArray();
+        // if (!games.length) {show message to the user/guest }
         return games
     } catch (err) {
         console.log('ERROR: cannot find games')
@@ -69,8 +70,8 @@ async function add(game) {
 
 function _buildCriteria(filterBy) {
     const criteria = {};
-    if (filterBy.txt) {
-        criteria.username = filterBy.txt
+    if (filterBy.publisherName) {
+        // criteria.publisher.user.userName = filterBy.publisherName
     }
     if (filterBy.minBalance) {
         criteria.balance = { $gte: +filterBy.minBalance }

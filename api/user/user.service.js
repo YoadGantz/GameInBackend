@@ -7,7 +7,8 @@ module.exports = {
     getById,
     remove,
     update,
-    add
+    add,
+    getByEmail
 }
 
 async function query(filterBy = {}) {
@@ -70,6 +71,18 @@ async function add(user) {
     }
 }
 
+
+async function getByEmail(email) {
+    const collection = await dbService.getCollection('user')
+    try {
+        const user = await collection.findOne({ "userName": email })
+        return user
+    } catch (err) {
+        console.log(`ERROR: while finding user ${email}`)
+        throw err;
+    }
+}
+
 function _buildCriteria(filterBy) {
     const criteria = {};
     if (filterBy.txt) {
@@ -80,5 +93,3 @@ function _buildCriteria(filterBy) {
     }
     return criteria;
 }
-
-
