@@ -12,7 +12,6 @@ module.exports = {
 
 async function query(filterBy) {
     const criteria = _buildCriteria(filterBy)
-    console.log("criteria", criteria)
     const collection = await dbService.getCollection('game')
     try {
         let games = await collection.find(criteria).toArray();
@@ -71,7 +70,6 @@ async function add(game) {
 
 
 function _buildCriteria(filterBy) {
-    console.log("filterby", filterBy)
     let criteria = {}
     if (filterBy.publisherName) {
         criteria.publisher = {
