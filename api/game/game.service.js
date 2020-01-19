@@ -12,7 +12,6 @@ module.exports = {
 
 async function query(filterBy) {
     const criteria = _buildCriteria(filterBy)
-    console.log("criteria", criteria)
     const collection = await dbService.getCollection('game')
     try {
         let games = await collection.find(criteria).toArray();
@@ -44,11 +43,9 @@ async function remove(gameId) {
         throw err;
     }
 }
-
 async function update(game) {
     const collection = await dbService.getCollection('game')
     game._id = ObjectId(game._id);
-
     try {
         await collection.replaceOne({ "_id": game._id }, { $set: game })
         return game
@@ -91,9 +88,15 @@ function _buildCriteria(filterBy) {
                 }
             }
         }
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err)
+    }
+    if (filterBy.wishedIds) {
+        criteria._id = {
+            $in: filterBy.wishedIds.map((id) => {
+                return ObjectId(id)
+            })
+        }
     }
     return criteria;
 }
