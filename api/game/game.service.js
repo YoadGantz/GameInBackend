@@ -15,6 +15,7 @@ async function query(filterBy) {
     const collection = await dbService.getCollection('game')
     try {
         let games = await collection.find(criteria).toArray();
+        console.log(games)
         // if (!games.length) {show message to the user/guest }
         return games
     } catch (err) {
@@ -70,10 +71,12 @@ async function add(game) {
 function _buildCriteria(filterBy) {
     const criteria = {}
     if (filterBy.publisherName) {
-        criteria.publisher =  filterBy.publisher
-    }
-    if (filterBy.title) {
-        criteria.title = filterBy.title
+        criteria.publisher = {
+            "user": {
+                userName:
+                    filterBy.publisherName
+            }
+        }
     }
     if (filterBy.wishedIds){
         criteria._id= { $in : filterBy.wishedIds.map((id)=>{
