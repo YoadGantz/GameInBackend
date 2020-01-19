@@ -10,8 +10,9 @@ module.exports = {
     add
 }
 
-async function query(filterBy = {}) {
+async function query(filterBy) {
     const criteria = _buildCriteria(filterBy)
+    console.log(criteria)
     const collection = await dbService.getCollection('game')
     try {
         let games = await collection.find(criteria).toArray();
@@ -69,8 +70,9 @@ async function add(game) {
     }
 }
 
+
 function _buildCriteria(filterBy) {
-    const criteria = {};
+    const criteria = {}
     if (filterBy.publisherName) {
         criteria.publisher = {
             "user": {
@@ -81,7 +83,7 @@ function _buildCriteria(filterBy) {
     }
 
     if (filterBy.minBalance) {
-        criteria.balance = { $gte: +filterBy.minBalance }
+        criteria.balance = { "$gte": +filterBy.minBalance }
     }
     return criteria;
 }
