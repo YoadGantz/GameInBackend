@@ -1,5 +1,6 @@
 
 const dbService = require('../../services/db.service')
+const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
     query,
@@ -30,9 +31,9 @@ async function add(order) {
 }
 
 function _buildCriteria(filterBy) {
-    const criteria = {};
-    if (filterBy.txt) {
-        criteria.username = filterBy.txt
+    let criteria = {};
+    if (filterBy.lastMonthId) {
+        criteria={_id:{$gte:ObjectId(filterBy.lastMonthId)},gameIds:filterBy.gameIds}
     }
     if (filterBy.minBalance) {
         criteria.balance = { $gte: +filterBy.minBalance }
