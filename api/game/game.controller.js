@@ -24,8 +24,6 @@ async function deleteGame(req, res) {
 
 async function addGame(req, res) {
     var game = req.body;
-    console.log(game);
-    
     // game.publiser = {_id: req.session.user._id, userName: req.session.user.userName};
     game = await gameService.add(game)
     res.send(game)

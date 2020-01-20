@@ -15,7 +15,6 @@ const gameRoutes = require('./api/game/game.routes')
 const orderRoutes = require('./api/order/order.routes')
 const connectSockets = require('./api/socket/socket.routes')
 
-
 app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(session({
@@ -41,8 +40,6 @@ app.use('/api/user', userRoutes)
 app.use('/api/game', gameRoutes)
 app.use('/api/order', orderRoutes)
 connectSockets(io)
-
-
 
 const logger = require('./services/logger.service')
 const port = process.env.PORT || 3030;

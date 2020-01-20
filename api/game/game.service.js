@@ -73,15 +73,26 @@ function _buildCriteria(filterBy) {
     if (filterBy._id) {
         criteria.publisher = filterBy._id
     }
-    if (filterBy.wishedIds){
-        criteria._id= { $in : filterBy.wishedIds.map((id)=>{
-            return ObjectId(id)
-        })}
+    try {
+        if (filterBy.shoppingCartIds) {
+            criteria = {
+                "_id": {
+                    "$in": filterBy.shoppingCartIds.map((id) => {
+                        return ObjectId(id)
+                    })
+                }
+            }
+        }
+    } catch (err) {
+        console.log(err)
     }
-    if (filterBy.minBalance) {
-        criteria.balance = {"$gte": +filterBy.minBalance }
+    if (filterBy.wishedIds) {
+        criteria._id = {
+            $in: filterBy.wishedIds.map((id) => {
+                return ObjectId(id)
+            })
+        }
     }
-    
     return criteria;
 }
 
