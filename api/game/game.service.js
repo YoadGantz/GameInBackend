@@ -58,6 +58,7 @@ async function update(game) {
 async function add(game) {
     const collection = await dbService.getCollection('game')
     try {
+        console.log(game)
         await collection.insertOne(game);
         return game;
     } catch (err) {
@@ -69,13 +70,8 @@ async function add(game) {
 
 function _buildCriteria(filterBy) {
     const criteria = {}
-    if (filterBy.publisherName) {
-        criteria.publisher = {
-            "user": {
-                userName:
-                    filterBy.publisherName
-            }
-        }
+    if (filterBy._id) {
+        criteria.publisher = filterBy._id
     }
     if (filterBy.wishedIds){
         criteria._id= { $in : filterBy.wishedIds.map((id)=>{
