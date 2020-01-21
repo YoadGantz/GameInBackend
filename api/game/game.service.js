@@ -69,7 +69,7 @@ async function add(game) {
 
 
 function _buildCriteria(filterBy) {
-    const criteria = {}
+    let criteria = {}
     if (filterBy._id) {
         criteria.publisher = filterBy._id
     }
