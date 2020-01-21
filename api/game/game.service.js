@@ -73,19 +73,17 @@ function _buildCriteria(filterBy) {
     if (filterBy._id) {
         criteria.publisher = filterBy._id
     }
-    try {
-        if (filterBy.shoppingCartIds) {
-            criteria = {
-                "_id": {
-                    "$in": filterBy.shoppingCartIds.map((id) => {
-                        return ObjectId(id)
-                    })
-                }
+
+    if (filterBy.shoppingCartIds) {
+        criteria = {
+            "_id": {
+                "$in": filterBy.shoppingCartIds.map((id) => {
+                    return ObjectId(id)
+                })
             }
         }
-    } catch (err) {
-        console.log(err)
     }
+    
     if (filterBy.wishedIds) {
         criteria._id = {
             $in: filterBy.wishedIds.map((id) => {

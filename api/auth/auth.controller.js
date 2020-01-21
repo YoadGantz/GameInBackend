@@ -12,7 +12,7 @@ async function login(req, res) {
     }
 }
 
-async function signup(req, res) {
+async function signUp(req, res) {
     try {
         const { email, password, username } = req.body
         logger.debug(email + ", " + username + ', ' + password)
@@ -38,6 +38,6 @@ async function logout(req, res) {
 
 module.exports = {
     login,
-    signup,
+    signUp,
     logout
 }

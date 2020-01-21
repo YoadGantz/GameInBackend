@@ -7,7 +7,7 @@
         "server:dev": "NODE_ENV=development nodemon app.js",
         "server:prod": "node app.js"
     },
-    "author": "moshe pinhasi",
+    "author": "alina boshkov",
     "license": "ISC",
     "dependencies": {
         "bcrypt": "^3.0.6",
