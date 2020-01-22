@@ -8,7 +8,7 @@ function connectSockets(io) {
             // emits only to sockets in the same room
             io.to(socket.myTopic).emit('chat newComment', msg)
         })
-        socket.on('chat topic', topic=>{
+        socket.on('chat room', topic=>{
             if (socket.myTopic) {
                 socket.leave(socket.myTopic)
             }
