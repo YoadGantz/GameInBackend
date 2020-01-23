@@ -1,6 +1,6 @@
 
 const MongoClient = require('mongodb').MongoClient;
-
+const url="mongodb+srv://daniil:01020304@cluster0-lutwi.mongodb.net/test?retryWrites=true&w=majority"
 const config  =  require('../config')
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
 }
 
 // Database Name
-const dbName = 'gameIn_db';
+const dbName = 'gameIm_db';
 
 var dbConn = null;
 
