@@ -38,6 +38,12 @@ function _buildCriteria(filterBy) {
     if (filterBy.minBalance) {
         criteria.balance = { $gte: +filterBy.minBalance }
     }
+    if (filterBy.orderBy) {
+        criteria.orderBy = filterBy.orderBy
+    }
+    if (filterBy.gameId){
+        criteria.gameIds=filterBy.gameId
+    }
     return criteria;
 }
 
