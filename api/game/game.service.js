@@ -82,7 +82,12 @@ function _buildCriteria(filterBy) {
             }
         }
     }
-    
+    if (filterBy.title){
+        criteria.title={$regex:`(?i).*${filterBy.title}.*`}
+    }
+    if (filterBy.tag){
+        criteria.tags={$regex:`(?i).*${filterBy.tag}.*`}
+    }
     if (filterBy.wishedIds) {
         criteria._id = {
             $in: filterBy.wishedIds.map((id) => {
