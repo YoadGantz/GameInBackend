@@ -8,7 +8,7 @@ module.exports = {
     remove,
     update,
     add,
-    getByEmail
+    getByUserName
 }
 
 async function query(filterBy = {}) {
@@ -62,6 +62,7 @@ async function update(user) {
 
 async function add(user) {
     const collection = await dbService.getCollection('user')
+    user.wishedGames = [];
     try {
         await collection.insertOne(user);
         return user;
@@ -72,13 +73,13 @@ async function add(user) {
 }
 
 
-async function getByEmail(email) {
+async function getByUserName(userName) {
     const collection = await dbService.getCollection('user')
     try {
-        const user = await collection.findOne({ "userName": email })
+        const user = await collection.findOne({ "userName": userName })
         return user
     } catch (err) {
-        console.log(`ERROR: while finding user ${email}`)
+        console.log(`ERROR: while finding user ${userName}`)
         throw err;
     }
 }

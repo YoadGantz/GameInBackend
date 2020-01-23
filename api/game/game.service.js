@@ -58,7 +58,6 @@ async function update(game) {
 async function add(game) {
     const collection = await dbService.getCollection('game')
     try {
-        console.log(game)
         await collection.insertOne(game);
         return game;
     } catch (err) {
