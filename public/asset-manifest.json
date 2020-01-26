@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.83772d49.chunk.css",
+    "main.css": "/static/css/main.bf7ec236.chunk.css",
     "main.js": "/static/js/main.017054d4.chunk.js",
     "main.js.map": "/static/js/main.017054d4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b6dcde93.js",
@@ -8,9 +8,9 @@
     "static/js/2.f5e5d5c0.chunk.js": "/static/js/2.f5e5d5c0.chunk.js",
     "static/js/2.f5e5d5c0.chunk.js.map": "/static/js/2.f5e5d5c0.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.dc7280416adb3ce9e0f2051ddc36a5cf.js": "/precache-manifest.dc7280416adb3ce9e0f2051ddc36a5cf.js",
+    "precache-manifest.0b30f035b0f5a36d7d615640aef5365f.js": "/precache-manifest.0b30f035b0f5a36d7d615640aef5365f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.83772d49.chunk.css.map": "/static/css/main.83772d49.chunk.css.map",
+    "static/css/main.bf7ec236.chunk.css.map": "/static/css/main.bf7ec236.chunk.css.map",
     "static/js/2.f5e5d5c0.chunk.js.LICENSE": "/static/js/2.f5e5d5c0.chunk.js.LICENSE",
     "static/media/global.scss": "/static/media/splash.0fc2b37f.jpg",
     "static/media/_EditGame.scss": "/static/media/background_spotlight.f4f0b632.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.b6dcde93.js",
     "static/js/2.f5e5d5c0.chunk.js",
-    "static/css/main.83772d49.chunk.css",
+    "static/css/main.bf7ec236.chunk.css",
     "static/js/main.017054d4.chunk.js"
   ]
 }
