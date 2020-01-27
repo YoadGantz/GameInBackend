@@ -12,6 +12,7 @@ async function query(filterBy = {}) {
     const collection = await dbService.getCollection('order')
     try {
         const orders = await collection.find(criteria).toArray();
+        _updateOrderTimes(orders)
         return orders
     } catch (err) {
         console.log('ERROR: cannot find orders')
@@ -45,3 +46,19 @@ function _buildCriteria(filterBy) {
 }
 
 
+async function _updateOrderTimes(orders) {
+    try {
+        orders.forEach(async (order) => {
+            const createdAt = order.createdAt;
+            while (order.createdAt < Date.now() - 31 * 24 * 60 * 60 * 1000) {
+                order.createdAt += 31 * 24 * 60 * 60 * 1000;
+            }
+            if (createdAt !== order.createdAt) {
+                await collection.updateOne({ "_id": ObjectId(order._id) }, { $set: { ...order } })
+            }
+        });
+    } catch (err) {
+        console.log('ERROR: cannot find orders')
+        throw err;
+    }
+}
