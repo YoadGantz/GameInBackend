@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b91f5212.chunk.css",
+    "main.js": "/static/js/main.86198d42.chunk.js",
+    "main.js.map": "/static/js/main.86198d42.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b6dcde93.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b6dcde93.js.map",
+    "static/js/2.73bb1abf.chunk.js": "/static/js/2.73bb1abf.chunk.js",
+    "static/js/2.73bb1abf.chunk.js.map": "/static/js/2.73bb1abf.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.713f937831b314b5bd0e6f1a838764b0.js": "/precache-manifest.713f937831b314b5bd0e6f1a838764b0.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b91f5212.chunk.css.map": "/static/css/main.b91f5212.chunk.css.map",
+    "static/js/2.73bb1abf.chunk.js.LICENSE": "/static/js/2.73bb1abf.chunk.js.LICENSE",
+    "static/media/global.scss": "/static/media/caspar-camille-rubin-HUBNTCzE-R8-unsplash.9f404456.jpg",
+    "static/media/_EditGame.scss": "/static/media/background_spotlight.f4f0b632.jpg",
+    "static/media/empty_heart.svg": "/static/media/empty_heart.1ff089d1.svg",
+    "static/media/full_heart.svg": "/static/media/full_heart.1aab119d.svg",
+    "static/media/remove_from_cart.png": "/static/media/remove_from_cart.f23f172d.png",
+    "static/media/shopping_cart.svg": "/static/media/shopping_cart.0ff5ef33.svg",
+    "static/media/wishlist.svg": "/static/media/wishlist.58d71a39.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6dcde93.js",
+    "static/js/2.73bb1abf.chunk.js",
+    "static/css/main.b91f5212.chunk.css",
+    "static/js/main.86198d42.chunk.js"
+  ]
+}
