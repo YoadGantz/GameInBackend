@@ -32,11 +32,8 @@ async function add(order) {
 
 function _buildCriteria(filterBy) {
     let criteria = {};
-    if (filterBy.lastMonthId) {
-        criteria={createdAt:{$gte:+(filterBy.lastMonthId)},gameIds:filterBy.gameIds}
-    }
-    if (filterBy.minBalance) {
-        criteria.balance = { $gte: +filterBy.minBalance }
+    if (filterBy.gameIds) {
+        criteria={gameIds:filterBy.gameIds}
     }
     if (filterBy.orderBy) {
         criteria.orderBy = filterBy.orderBy
