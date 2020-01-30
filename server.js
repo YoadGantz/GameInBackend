@@ -39,6 +39,9 @@ app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/game', gameRoutes)
 app.use('/api/order', orderRoutes)
+app.get('/*', function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'))
+})
 connectSockets(io)
 
 const logger = require('./services/logger.service')
