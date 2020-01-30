@@ -50,8 +50,8 @@ async function _updateOrderTimes(orders) {
     try {
         orders.forEach(async (order) => {
             const createdAt = order.createdAt;
-            while (order.createdAt < Date.now() - 31 * 24 * 60 * 60 * 1000) {
-                order.createdAt += 31 * 24 * 60 * 60 * 1000;
+            while (order.createdAt < Date.now() - 29 * 24 * 60 * 60 * 1000) {
+                order.createdAt += 30 * 24 * 60 * 60 * 1000;
             }
             if (createdAt !== order.createdAt) {
                 await collection.updateOne({ "_id": ObjectId(order._id) }, { $set: { ...order } })
