@@ -1,34 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.25cca291.chunk.css",
-    "main.js": "/static/js/main.c1b7bb5a.chunk.js",
-    "main.js.map": "/static/js/main.c1b7bb5a.chunk.js.map",
+    "main.css": "/static/css/main.34cca001.chunk.css",
+    "main.js": "/static/js/main.21c93d95.chunk.js",
+    "main.js.map": "/static/js/main.21c93d95.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b6dcde93.js",
     "runtime-main.js.map": "/static/js/runtime-main.b6dcde93.js.map",
-    "static/js/2.03d605e3.chunk.js": "/static/js/2.03d605e3.chunk.js",
-    "static/js/2.03d605e3.chunk.js.map": "/static/js/2.03d605e3.chunk.js.map",
+    "static/js/2.b5aaff0e.chunk.js": "/static/js/2.b5aaff0e.chunk.js",
+    "static/js/2.b5aaff0e.chunk.js.map": "/static/js/2.b5aaff0e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.047e14c32fc23de0d79cff61e1863040.js": "/precache-manifest.047e14c32fc23de0d79cff61e1863040.js",
+    "precache-manifest.bbcccfb570896da7558e44931096ab56.js": "/precache-manifest.bbcccfb570896da7558e44931096ab56.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.25cca291.chunk.css.map": "/static/css/main.25cca291.chunk.css.map",
-    "static/js/2.03d605e3.chunk.js.LICENSE": "/static/js/2.03d605e3.chunk.js.LICENSE",
+    "static/css/main.34cca001.chunk.css.map": "/static/css/main.34cca001.chunk.css.map",
+    "static/js/2.b5aaff0e.chunk.js.LICENSE": "/static/js/2.b5aaff0e.chunk.js.LICENSE",
     "static/media/global.scss": "/static/media/splash.0fc2b37f.jpg",
-    "static/media/arrow_down.svg": "/static/media/arrow_down.eb493c40.svg",
-    "static/media/arrow_up.svg": "/static/media/arrow_up.d7b22dd4.svg",
     "static/media/_EditGame.scss": "/static/media/background_spotlight.f4f0b632.jpg",
     "static/media/bin.svg": "/static/media/bin.817d91ee.svg",
     "static/media/edit.svg": "/static/media/edit.a679f828.svg",
     "static/media/empty_heart.svg": "/static/media/empty_heart.1ff089d1.svg",
     "static/media/full_heart.svg": "/static/media/full_heart.1aab119d.svg",
-    "static/media/play.svg": "/static/media/play.110eb8dc.svg",
     "static/media/remove_from_cart.svg": "/static/media/remove_from_cart.ccf11e5c.svg",
+    "static/media/send.svg": "/static/media/send.7cd8afcb.svg",
     "static/media/shopping_cart.svg": "/static/media/shopping_cart.0ff5ef33.svg",
+    "static/media/up_down_arrows.svg": "/static/media/up_down_arrows.d68eb9f0.svg",
     "static/media/wishlist.svg": "/static/media/wishlist.58d71a39.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b6dcde93.js",
-    "static/js/2.03d605e3.chunk.js",
-    "static/css/main.25cca291.chunk.css",
-    "static/js/main.c1b7bb5a.chunk.js"
+    "static/js/2.b5aaff0e.chunk.js",
+    "static/css/main.34cca001.chunk.css",
+    "static/js/main.21c93d95.chunk.js"
   ]
 }
