@@ -12,7 +12,12 @@ async function query(filterBy = {}) {
     const collection = await dbService.getCollection('order')
     try {
         const orders = await collection.find(criteria).toArray();
-        _updateOrderTimes(orders)
+        let oldOrders = await collection.find({ createdAt: { $lte: Date.now() - 29 * 24 * 60 * 60 * 1000 } }).toArray()
+        while (oldOrders.length > 0) {
+            await _updateOrderTimes(oldOrders, collection)
+            oldOrders = await collection.find({ createdAt: { $lte: Date.now() - 29 * 24 * 60 * 60 * 1000 } }).toArray()
+        }
+
         return orders
     } catch (err) {
         console.log('ERROR: cannot find orders')
@@ -34,30 +39,26 @@ async function add(order) {
 function _buildCriteria(filterBy) {
     let criteria = {};
     if (filterBy.gameIds) {
-        criteria={createdAt:{$gte:+(filterBy.lastMonthId)},gameIds:filterBy.gameIds}
+        criteria = { createdAt: { $gte: +(filterBy.lastMonthId) }, gameIds: filterBy.gameIds }
     }
     if (filterBy.orderBy) {
         criteria.orderBy = filterBy.orderBy
     }
-    if (filterBy.gameId){
-        criteria.gameIds=filterBy.gameId
+    if (filterBy.gameId) {
+        criteria.gameIds = filterBy.gameId
     }
     return criteria;
 }
 
 
-async function _updateOrderTimes(orders) {
+async function _updateOrderTimes(orders, collection) {
     try {
         orders.forEach(async (order) => {
-            const createdAt = order.createdAt;
-            while (order.createdAt < Date.now() - 29 * 24 * 60 * 60 * 1000) {
-                order.createdAt += 30 * 24 * 60 * 60 * 1000;
-            }
-            if (createdAt !== order.createdAt) {
-                await collection.updateOne({ "_id": ObjectId(order._id) }, { $set: { ...order } })
-            }
-        });
-    } catch (err) {
+            order.createdAt += 29 * 24 * 60 * 60 * 1000;
+            await collection.updateOne({ "_id": ObjectId(order._id) }, { $set: { ...order } })
+        })
+    }
+    catch (err) {
         console.log('ERROR: cannot find orders')
         throw err;
     }
